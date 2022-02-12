@@ -27,7 +27,7 @@ module.exports = () => {
       new MiniCssExtractPlugin(),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
         // TODO: Create a manifest.json:
@@ -37,11 +37,14 @@ module.exports = () => {
           background_color: '#ffffff',
           crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
           fingerprints: false,
+          inject: true,
+          start_url: '/',
+          publicPath: '/',
           icons: [
             {
               src: path.resolve('src/images/logo.png'),
-              sizes: [96],
-              destination: path.join('assets',"icons")
+              sizes: [96, 128, 192, 256, 384, 512],
+              destination: path.join('assets', 'icons'),
             },
        
           ]
