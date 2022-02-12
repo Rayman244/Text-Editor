@@ -17,7 +17,7 @@ const loadSpinner = () => {
   </div>
   `;
   main.appendChild(spinner);
-  // document.getElementById('logo').src = Logo
+
 };
 
 const editor = new Editor();
