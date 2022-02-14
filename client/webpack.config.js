@@ -13,7 +13,8 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js', 
+      
     },
     output: {
       filename: '[name].bundle.js',
@@ -49,6 +50,7 @@ module.exports = () => {
        
           ]
       }),
+      
   
     ],
 
@@ -68,6 +70,7 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              plugins:["@babel/plugin-transform-runtime",]
             },
           },
         },
